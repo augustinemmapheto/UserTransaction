@@ -4,16 +4,15 @@ public class BasicMenu {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
 
+        
         while (true) {
-            // Display the menu options
+            System.out.println("Welcome to Our Loan Solution");
             System.out.println("Transactions:");
             System.out.println("1. Log in");
             System.out.println("2. Loans");
-            System.out.println("3. Bills");
-            System.out.println("4. Exit");
+            System.out.println("3. Exit");
             System.out.print("Enter your choice: ");
 
-            // Get the user's choice
             int choice = kb.nextInt();
 
             // Use a switch statement to perform actions based on the user's choice
@@ -43,7 +42,7 @@ public class BasicMenu {
                     break;
                 case 2:
                     System.out.println("Calculate your monthly installment right here!!!\n");
-                    // Add code for Option 2 here
+                    
                     int iPayNo;
         double rInterestRate = 6.0/100;
         double rAmount, rMonthly, rUpper, rLower;
@@ -69,10 +68,6 @@ public class BasicMenu {
                     
                     break;
                 case 3:
-                    System.out.println("You can pay your bills here");
-                    // Add code for Option 3 here
-                    break;
-                case 4:
                     System.out.println("Exiting the program.");
                     kb.close();
                     System.exit(0);
@@ -80,5 +75,5 @@ public class BasicMenu {
                     System.out.println("Invalid choice. Please select a valid option.");
             }
         }
-    }
-}
+    }//end main method
+}//end class
