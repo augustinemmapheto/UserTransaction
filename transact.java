@@ -42,25 +42,30 @@ public class BasicMenu {
                     }
                     break;
                 case 2:
-                    System.out.println("Calculate your monthly installment right here!!!");
+                    System.out.println("Calculate your monthly installment right here!!!\n");
                     // Add code for Option 2 here
-                     int iPayNo;
-                     double rIntrestRate = 6/100;
-                     double rAmount, rMonthly, rUpper, rLower;
-                    
-                    System.out.print("Enter loan amount");
-                    iAmount = kb.nextInt();
-                    System.out.print("Enter no. of monthly payments");
-                    iAmount = kb.nextInt();
+                    int iPayNo;
+        double rInterestRate = 6.0/100;
+        double rAmount, rMonthly, rUpper, rLower;
+        double rInner = 1 + rInterestRate;
+        
+        System.out.print("Enter loan amount:");
+        rAmount = kb.nextDouble();
+        System.out.print("Enter no. of monthly payments: ");
+        iPayNo = kb.nextInt();
 
-                    if(iPayNo>0)
-                    {
-                        rUpper = rIntrestRate * Math.pow((1 + rIntrestRate), iPayNo);
-                    }
-                    else
-                    {
-                        System.out.println("incorrect number of monthly payment");
-                    }
+        if((iPayNo>0) && (iPayNo < 24))
+        {
+            rUpper = rInterestRate * Math.pow(rInner, iPayNo);
+            rLower = Math.pow(rInner, iPayNo) -1;
+            rMonthly = rAmount * (rUpper/rLower);
+            
+            System.out.println("Your monthly installment which needs to be paid is: R" + rMonthly);
+        }
+        else
+        {
+            System.out.println("incorrect number of monthly payment");
+        }
                     
                     break;
                 case 3:
