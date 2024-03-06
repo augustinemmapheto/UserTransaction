@@ -77,3 +77,4 @@ public class BasicMenu {
         }
     }//end main method
 }//end class
+//while loop, do-while, and static Method 
