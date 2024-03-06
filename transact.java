@@ -77,4 +77,129 @@ public class BasicMenu {
         }
     }//end main method
 }//end class
-//while loop, do-while, and static Method 
+
+
+//while loop, do-while, and 
+
+import java.util.Scanner;
+class HelloWorld 
+{
+    public static void main(String[] args) 
+    {
+        int iC, iNum, rSum = 0;
+        boolean isValid;
+        //int iC, iNumSweets, iNumBread, rTotal =0;
+        //int rTotSweets = 0, rTotLoafs = 0;
+        Scanner kb = new Scanner(System.in);
+        
+        //System.out.print("1. to begin Transcaction or  \n 2. to Exit \n\n Choice: ");
+        //iC = kb.nextInt();
+        /*
+        while(iC != 2)
+        {
+            if(iC == 1)
+            {
+                System.out.print("Num of Bread: ");
+                iNumBread = kb.nextInt();
+                System.out.print("Num of Sweets: ");
+                iNumSweets = kb.nextInt();
+                
+                rTotSweets += iNumSweets;
+                rTotLoafs += iNumBread;
+                
+                
+                
+            }
+            else
+            {
+                System.out.println("Invalid Choice, try again");
+            }
+            
+            System.out.print("1. to begin Transcaction or  \n 2. to Exit \n\n Choice: ");
+            iC = kb.nextInt();
+            
+        }
+        
+        rTotal = rTotSweets + rTotLoafs;
+        System.out.println("The total numver of loafs : " + rTotLoafs);
+        System.out.println("The rotal of sweets : " + rTotSweets);
+         System.out.println("The rotal of sweets : " + rTotal);
+        */
+        System.out.print("1. to Sum \n 2. to Exit \n\n Choice: ");
+        iC = kb.nextInt();
+        
+        while(iC != 2)
+        {
+            if(iC == 1)
+            {
+                do
+                {
+                    System.out.print("Enter a value to sum: ");
+                    iNum = kb.nextInt();
+                    if(iNum<1)
+                    {
+                        System.out.println("Invalid num, try postive num...");
+                        isValid = false;
+                    }
+                    else
+                    {isValid = true;
+                        
+                    }
+                }while(!isValid);
+                
+            }
+            else
+            {
+                System.out.println("Invalid Choice, try again");
+            }
+            
+            System.out.print("1. to Sum \n 2. to Exit \n\n Choice: ");
+            iC = kb.nextInt();
+        }
+        
+        System.out.println("The Sum of is : " +rSum);
+        
+        
+        
+        
+    }
+    
+    public static int Sum(int iNum)
+    {
+        
+    }
+}
+
+//static Method 
+
+import java.util.Scanner;
+class HelloWorld 
+{
+    public static void displayInfo(int Sum)
+    {
+        System.out.println("The Total sum is: " + Sum );
+    }
+    
+    public static int calSum(int rSum, int iNum)
+    {
+        return rSum += iNum;
+    }
+    
+    public static void main(String[] args) 
+    {
+        int iNum, iChoice, rSum= 0;
+        
+        Scanner kb = new Scanner(System.in);
+        
+        System.out.print("Enter a number: ");
+        iNum = kb.nextInt();
+        
+        int total = calSum(rSum, iNum);
+        
+        displayInfo(total);
+        
+        
+    }
+}
+
+
